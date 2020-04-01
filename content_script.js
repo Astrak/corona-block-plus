@@ -39,7 +39,7 @@ function replaceCorona() {
         }
         chrome.storage.onChanged.addListener(changes => {
             for (key in changes) {
-                if (key === "cbp-replacement") {
+                if (key === "cbp-replacement" || !isEnabled) {
                     return replaceCorona();
                 }
             }

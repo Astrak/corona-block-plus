@@ -66,7 +66,7 @@ strong {
     margin: var(--spacing);
 }
 
-#replace-covid-input {
+#replace-input {
     background: var(--white-darker);
     border: none;
     border-bottom: solid var(--border-width) var(--grey-darker);
@@ -87,7 +87,7 @@ button {
     padding: var(--spacing);
 }
 
-#decontaminate {
+#apply {
     font-size: var(--font-size-normal);
     background-color: var(--blue);
     border: 0;
@@ -98,14 +98,15 @@ button {
         color var(--transition-time) ease;
 }
 
-#decontaminate:active {
+#apply:active {
     background-color: var(--blue-lighter);
 }
 
-#decontaminate:disabled {
+#apply:disabled {
     background-color: var(--white-darker);
     border: 0;
     border-top: solid var(--border-width) var(--grey);
+    border-bottom: solid calc(var(--border-width) * 2) var(--white-darker);
     color: #888;
 }
 
