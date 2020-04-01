@@ -1,0 +1,30 @@
+{
+    "name": "Coronablock Plus",
+    "version": "0.0.1",
+    "description": "Sanitize the web. Trade cough for laugh.",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": {
+            "16": "images/cbp16.png",
+            "32": "images/cbp32.png",
+            "48": "images/cbp48.png",
+            "128": "images/cbp128.png"
+        }
+    },
+    "icons": {
+        "16": "images/cbp16.png",
+        "32": "images/cbp32.png",
+        "48": "images/cbp48.png",
+        "128": "images/cbp128.png"
+    },
+    "permissions": ["tabs", "storage"],
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "all_frames": true,
+            "js": ["content_script.js"]
+        }
+    ],
+    "web_accessible_resources": ["inject.js"]
+}

@@ -1,0 +1,8 @@
+{
+    "name": "corona-block-plus",
+    "version": "0.0.1",
+    "description": "Chrome extension",
+    "main": "manifest.json",
+    "author": "Atrahasis <coffre.a@gmail.com>",
+    "license": "MIT"
+}
