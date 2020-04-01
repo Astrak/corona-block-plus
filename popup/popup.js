@@ -53,7 +53,7 @@ function setUpCheckbox() {
         button.disabled = !checkbox.checked;
     });
     checkbox.addEventListener("change", e => {
-        chrome.storage.sync.set({ "cbp-enabled": checkbox.checked });
+        chrome.storage.sync.set({ "cbp-enabled": e.target.checked });
         const button = document.getElementById("decontaminate");
         if (!button) return;
         button.disabled = !e.target.checked;

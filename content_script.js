@@ -29,7 +29,11 @@ function replaceCorona() {
             return;
         }
         const replacement = storage["cbp-replacement"];
-        if (isEnabled && TARGET_STRINGS.indexOf(replacement) === -1) {
+        if (
+            isEnabled &&
+            replacement.trim() !== "" &&
+            TARGET_STRINGS.indexOf(replacement) === -1
+        ) {
             traverseAndObserveDocument(replacement);
             TARGET_STRINGS.push(replacement);
         }

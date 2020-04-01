@@ -1,7 +1,7 @@
 {
     "name": "Coronablock Plus",
     "version": "0.0.1",
-    "description": "Sanitize the web. Trade cough for laugh.",
+    "description": "Sanitize the web. Be creative.",
     "manifest_version": 2,
     "browser_action": {
         "default_popup": "popup/popup.html",
@@ -25,6 +25,5 @@
             "all_frames": true,
             "js": ["content_script.js"]
         }
-    ],
-    "web_accessible_resources": ["inject.js"]
+    ]
 }
