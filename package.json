@@ -4,5 +4,8 @@
     "description": "Chrome extension",
     "main": "manifest.json",
     "author": "Atrahasis <coffre.a@gmail.com>",
-    "license": "MIT"
+    "license": "MIT",
+    "scripts": {
+        "gen-images": "convert -resize 128 ./images/cbp256.png ./images/cbp128.png && convert -resize 48 ./images/cbp256.png ./images/cbp48.png && convert -resize 32 ./images/cbp256.png ./images/cbp32.png && convert -resize 16 ./images/cbp256.png ./images/cbp16.png"
+    }
 }

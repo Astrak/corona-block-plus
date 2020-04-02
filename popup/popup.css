@@ -10,14 +10,9 @@ body {
     --white-darker: hsl(0, 0%, 90%);
     --grey: hsl(0, 0%, 85%);
     --grey-darker: hsl(0, 0%, 75%);
-    --orange: hsl(27, 100%, 60%);
-    --orange-darker: hsl(27, 100%, 40%);
     --blue: hsl(231, 100%, 65%);
     --blue-darker: hsl(231, 100%, 55%);
     --blue-lighter: hsl(231, 100%, 75%);
-    --green: hsl(143, 100%, 31%);
-    --green-darker: hsl(143, 100%, 24%);
-    --green-lighter: hsl(143, 36%, 62%);
     background: var(--white);
     font-size: var(--font-size-normal);
     margin: 0;
@@ -40,12 +35,12 @@ header {
 h1 {
     text-align: left;
     font-size: var(--font-size-big);
-    background: var(--orange);
+    background: var(--blue);
     padding: calc(var(--spacing) + 2px);
     padding-left: calc(var(--spacing) * 1.5 + var(--logo-size));
-    padding-bottom: calc(var(--spacing) - var(--font-size-big) / 13);
-    padding-top: calc(var(--spacing) + var(--font-size-big) / 13);
-    border-bottom: solid var(--border-width) var(--orange-darker);
+    padding-bottom: calc(var(--spacing) - 2px);
+    padding-top: calc(var(--spacing) + 2px);
+    border-bottom: solid var(--border-width) var(--blue-darker);
     margin: 0;
     color: var(--white);
     font-weight: normal;
@@ -92,7 +87,7 @@ button {
     background-color: var(--blue);
     border: 0;
     border-top: solid var(--border-width) var(--blue-darker);
-    border-bottom: solid calc(var(--border-width) * 2) var(--blue);
+    border-bottom: solid calc(var(--border-width)) var(--blue);
     transition: border var(--transition-time) ease,
         background-color var(--transition-time) ease,
         color var(--transition-time) ease;
@@ -100,13 +95,15 @@ button {
 
 #apply:active {
     background-color: var(--blue-lighter);
+    border-top: solid var(--border-width) var(--blue);
+    border-bottom: solid calc(var(--border-width)) var(--blue-lighter);
 }
 
 #apply:disabled {
     background-color: var(--white-darker);
     border: 0;
     border-top: solid var(--border-width) var(--grey);
-    border-bottom: solid calc(var(--border-width) * 2) var(--white-darker);
+    border-bottom: solid calc(var(--border-width)) var(--white-darker);
     color: #888;
 }
 
@@ -147,11 +144,11 @@ button {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--grey);
+    background-color: var(--white-darker);
     -webkit-transition: 0.4s;
     transition: var(--transition-time);
     border-radius: 34px;
-    box-shadow: 0 0 3px var(--orange-darker);
+    box-shadow: 0 0 3px var(--blue-darker);
 }
 
 #switch .slider:before {
@@ -164,7 +161,7 @@ button {
     background-color: var(--white);
     -webkit-transition: 0.4s;
     transition: var(--transition-time);
-    box-shadow: 0 0 5px var(--orange-darker);
+    box-shadow: 0 0 5px var(--blue-darker);
 }
 
 #switch input {
@@ -174,7 +171,7 @@ button {
 }
 
 #switch input:checked + .slider {
-    background-color: var(--blue);
+    background-color: var(--blue-lighter);
 }
 
 #switch input:checked + .slider:before {

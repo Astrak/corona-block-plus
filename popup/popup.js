@@ -3,10 +3,12 @@ const IDEAS = [
     "pokemons",
     "witchcraft",
     "Skynet",
-    "sort of",
+    "kind of",
     "infidels",
-    "copulation",
-    "love",
+    "intercourse",
+    "wind",
+    "bigotry",
+    "good vibes",
 ];
 
 populatePropositions();
