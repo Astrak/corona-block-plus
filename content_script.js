@@ -2,6 +2,22 @@
 // after "corona virus" strings are replaced => put one word strings at
 // the end of the list.
 var TARGET_STRINGS = [
+    "the corona virus",
+    "the covid-19 virus",
+    "the covid virus",
+    "the corona-virus",
+    "the covid-19",
+    "the Covid-19",
+    "the COVID-19",
+    "the coronavirus",
+    "the Coronavirus",
+    "the covid",
+    "the Covid",
+    "the COVID",
+    "the virus",
+    "the Virus",
+    "the corona",
+    "the Corona",
     "corona virus",
     "covid-19 virus",
     "covid virus",
@@ -23,7 +39,7 @@ var TARGET_STRINGS = [
 replaceCorona();
 
 function replaceCorona() {
-    chrome.storage.sync.get(["cbp-replacement", "cbp-enabled"], storage => {
+    chrome.storage.sync.get(["cbp-replacement", "cbp-enabled"], (storage) => {
         const isEnabled = storage["cbp-enabled"];
         if (isEnabled === undefined) {
             return;
@@ -37,7 +53,7 @@ function replaceCorona() {
             traverseAndObserveDocument(replacement);
             TARGET_STRINGS.push(replacement);
         }
-        chrome.storage.onChanged.addListener(changes => {
+        chrome.storage.onChanged.addListener((changes) => {
             for (key in changes) {
                 if (key === "cbp-replacement" || !isEnabled) {
                     return replaceCorona();
@@ -68,7 +84,7 @@ function handleText(textNode, value) {
 }
 
 function replaceText(v, value) {
-    TARGET_STRINGS.forEach(targetString => {
+    TARGET_STRINGS.forEach((targetString) => {
         v = v.replace(new RegExp(targetString, "g"), value);
     });
     return v;
@@ -89,7 +105,7 @@ function traverseAndObserveDocument(value) {
     document.title = replaceText(document.title, value);
     walk(document.body, value);
 
-    window.addEventListener("message", e => {
+    window.addEventListener("message", (e) => {
         if (e.data.type === "REPLACE_COVID") {
             window.__replacementStringCovid = e.data.value;
             document.title = replaceText(document.title, value);
@@ -98,7 +114,7 @@ function traverseAndObserveDocument(value) {
     });
 
     const title = document.getElementsByTagName("title")[0];
-    const observer = mutations => {
+    const observer = (mutations) => {
         for (const mutation of mutations) {
             for (const node of mutation.addedNodes) {
                 if (isForbiddenNode(node)) {

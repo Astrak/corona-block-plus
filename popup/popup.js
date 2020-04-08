@@ -2,13 +2,13 @@ const IDEAS = [
     "twerking",
     "pokemons",
     "witchcraft",
-    "Skynet",
+    "bloody",
     "kind of",
     "infidels",
     "intercourse",
     "wind",
-    "bigotry",
-    "good vibes",
+    "liberal ideals",
+    "good mood",
 ];
 
 populatePropositions();
@@ -31,7 +31,7 @@ function populatePropositions() {
 }
 
 function setUpPopup() {
-    chrome.storage.sync.get(["cbp-enabled", "cbp-replacement"], storage => {
+    chrome.storage.sync.get(["cbp-enabled", "cbp-replacement"], (storage) => {
         const input = document.getElementById("replace-input");
         const value = storage["cbp-replacement"];
         if (value) {
